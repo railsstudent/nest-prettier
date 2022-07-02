@@ -1,0 +1,4 @@
+dist/
+schematics/**/*.js
+schematics/**/*.js.map
+schematics/**/*.d.ts

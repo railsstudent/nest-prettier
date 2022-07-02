@@ -1,0 +1,40 @@
+{
+  "name": "nest-prettier",
+  "version": "0.0.1",
+  "description": "A schematic to run prettier as an eslint rule",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine src/**/*_spec.js",
+    "manual-test": "npm run build && schematics .:nest-add",
+    "lint": "eslint \"{src,schematics}/**/*.ts\" --fix",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "schematics",
+    "nestjs",
+    "eslint-plugin-prettier",
+    "prettier"
+  ],
+  "author": "Connie Leung",
+  "license": "MIT",
+  "schematics": "./schematics/collection.json",
+  "nest-add": {
+    "save": false
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^14.0.1",
+    "@angular-devkit/schematics": "^14.0.1",
+    "typescript": "~4.7.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "~4.0.0",
+    "@types/node": "^14.15.0",
+    "eslint": "8.19.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "jasmine": "^4.0.0",
+    "prettier": "2.7.1",
+    "rimraf": "^3.0.2"
+  }
+}

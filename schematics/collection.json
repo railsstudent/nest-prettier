@@ -1,0 +1,10 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "nest-add": {
+      "description": "A blank schematic.",
+      "factory": "./nest-prettier/index#nestPrettier",
+      "schema": "./nest-prettier/schema.json"
+    }
+  }
+}
