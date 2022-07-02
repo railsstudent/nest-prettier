@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "nest-add": {
-      "description": "A blank schematic.",
+      "description": "Run prettier as an eslint rule.",
       "factory": "./nest-prettier/index#nestPrettier",
       "schema": "./nest-prettier/schema.json"
     }
