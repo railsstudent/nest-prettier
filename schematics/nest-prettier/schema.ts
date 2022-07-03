@@ -6,4 +6,5 @@ export interface Schema {
   singleQuote: boolean
   trailComma: string
   bracketSpacing: boolean
+  eslintFileFormat: string
 }

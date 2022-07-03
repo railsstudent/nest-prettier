@@ -5,6 +5,14 @@
     "description": "Run prettier as an eslint rule",
     "type": "object",
     "properties": {
+      "eslintFileFormat": {
+        "type": "string",
+        "description": "Eslint file format.",
+        "x-prompt": "Eslint file format.",
+        "default": "js",
+        "enum": ["js", "json", "package.json"]
+
+      },
       "printWidth": {
         "type": "integer",
         "description": "Print width of prettier.",
