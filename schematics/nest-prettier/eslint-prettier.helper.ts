@@ -25,7 +25,7 @@ export function addEslintPrettier(options: Schema): Rule {
     } else if (options.eslintFileFormat === ESLINT_FILE_FORMAT.JSON) {
       updateEslintJson(tree, buffer, configFileName, prettierRule)
     } else if (options.eslintFileFormat === ESLINT_FILE_FORMAT.JAVASCRIPT) {
-      context.logger.info('Does not support JavaScript')
+      context.logger.info('Does not support .eslintrc.js')
       context.logger.info(`Append 'plugin:prettier/recommended' to extends array in ${configFileName}`)
       context.logger.info(`Append ${JSON.stringify(prettierRule)} to rules object in ${configFileName}`)
       // updateEslintJs(tree, buffer, configFileName, prettierRule)
