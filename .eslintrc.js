@@ -11,9 +11,12 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.eslint.json',
   },
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint'],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'all', tabWidth: 2, semi: false, printWidth: 140, bracketSpacing: true }],
+    'prettier/prettier': [
+      'error',
+      { singleQuote: true, trailingComma: 'all', tabWidth: 2, semi: false, printWidth: 140, bracketSpacing: true },
+    ],
   },
 }

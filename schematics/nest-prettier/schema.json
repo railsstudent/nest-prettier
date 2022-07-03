@@ -1,63 +1,61 @@
 {
-    "$schema": "http://json-schema.org/schema",
-    "$id": "SchematicsEslintPrettier",
-    "title": "Add eslint-plugin-prettier",
-    "description": "Run prettier as an eslint rule",
-    "type": "object",
-    "properties": {
-      "eslintFileFormat": {
-        "type": "string",
-        "description": "Eslint file format.",
-        "x-prompt": "Eslint file format.",
-        "default": "js",
-        "enum": ["js", "json", "package.json"]
-
-      },
-      "printWidth": {
-        "type": "integer",
-        "description": "Print width of prettier.",
-        "x-prompt": "What is the print width per line?",
-        "default": 80,
-        "enum": [80, 100, 120, 140]
-      },
-      "tabWidth": {
-        "type": "integer",
-        "description": "Specify the number of spaces per indentation-level.",
-        "x-prompt": "Specify the number of spaces per indentation-level.",
-        "default": 2,
-        "enum": [2, 4]
-      },
-      "useTabs": {
-        "type": "boolean",
-        "description": "Indent lines with tabs instead of spaces.",
-        "x-prompt": "Indent lines with tabs instead of spaces.",
-        "default": false
-      },
-      "semi": {
-        "type": "boolean",
-        "description": "Print semicolons at the ends of statements.",
-        "x-prompt": "Print semicolons at the ends of statements.",
-        "default": true
-      },
-      "singleQuote": {
-        "type": "boolean",
-        "description": "Use single quotes instead of double quotes.",
-        "x-prompt": "Use single quotes instead of double quotes.",
-        "default": false
-      },
-      "trailComma": {
-        "type": "string",
-        "description": "Print trailing commas wherever possible in multi-line comma-separated syntactic structures.",
-        "x-prompt": "Print trailing commas wherever possible in multi-line comma-separated syntactic structures.",
-        "default": "es5",
-        "enum": ["es5", "none", "all"]
-      },
-      "bracketSpacing": {
-        "type": "boolean",
-        "description": "Print spaces between brackets in object literals.",
-        "x-prompt": "Print spaces between brackets in object literals.",
-        "default": true
-      }
-   }
+  "$schema": "http://json-schema.org/schema",
+  "$id": "SchematicsEslintPrettier",
+  "title": "Add eslint-plugin-prettier",
+  "description": "Run prettier as an eslint rule",
+  "type": "object",
+  "properties": {
+    "eslintFileFormat": {
+      "type": "string",
+      "description": "Eslint file format.",
+      "x-prompt": "Eslint file format.",
+      "default": "js",
+      "enum": ["js", "json", "package.json"]
+    },
+    "printWidth": {
+      "type": "integer",
+      "description": "Print width of prettier.",
+      "x-prompt": "What is the print width per line?",
+      "default": 80,
+      "enum": [80, 100, 120, 140]
+    },
+    "tabWidth": {
+      "type": "integer",
+      "description": "Specify the number of spaces per indentation-level.",
+      "x-prompt": "Specify the number of spaces per indentation-level.",
+      "default": 2,
+      "enum": [2, 4]
+    },
+    "useTabs": {
+      "type": "boolean",
+      "description": "Indent lines with tabs instead of spaces.",
+      "x-prompt": "Indent lines with tabs instead of spaces.",
+      "default": false
+    },
+    "semi": {
+      "type": "boolean",
+      "description": "Print semicolons at the ends of statements.",
+      "x-prompt": "Print semicolons at the ends of statements.",
+      "default": true
+    },
+    "singleQuote": {
+      "type": "boolean",
+      "description": "Use single quotes instead of double quotes.",
+      "x-prompt": "Use single quotes instead of double quotes.",
+      "default": false
+    },
+    "trailComma": {
+      "type": "string",
+      "description": "Print trailing commas wherever possible in multi-line comma-separated syntactic structures.",
+      "x-prompt": "Print trailing commas wherever possible in multi-line comma-separated syntactic structures.",
+      "default": "es5",
+      "enum": ["es5", "none", "all"]
+    },
+    "bracketSpacing": {
+      "type": "boolean",
+      "description": "Print spaces between brackets in object literals.",
+      "x-prompt": "Print spaces between brackets in object literals.",
+      "default": true
+    }
   }
-  
+}

@@ -2,6 +2,7 @@ import { chain, Rule, SchematicContext, Tree } from '@angular-devkit/schematics'
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks'
 import { eslintConfigPrettier, eslintPluginPrettier, prettier } from './constants'
 import { addDependencies } from './dependency.helper'
+import { addEslintPrettier } from './eslint-prettier.helper'
 import { addPrettierConfig } from './prettier.helper'
 import { Schema } from './schema'
 
@@ -12,8 +13,6 @@ export function nestPrettier(options: Schema): Rule {
     context.addTask(new NodePackageInstallTask({ allowScripts: true }))
 
     addDependencies(tree, context, [prettier, eslintConfigPrettier, eslintPluginPrettier])
-    return chain([
-      addPrettierConfig(options)
-    ])
+    return chain([addPrettierConfig(options), addEslintPrettier(options)])
   }
 }
