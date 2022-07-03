@@ -10,7 +10,7 @@
       "description": "Eslint file format.",
       "x-prompt": "Eslint file format.",
       "default": "js",
-      "enum": ["js", "json", "package.json"]
+      "enum": ["javascript", "json", "package.json"]
     },
     "printWidth": {
       "type": "integer",

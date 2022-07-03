@@ -2,6 +2,7 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics'
 import { Schema } from './schema'
 import { ESLINT_FILE_FORMAT } from './enum'
 import { PrettierOptions } from './types'
+import { uniq } from 'lodash'
 
 export function addEslintPrettier(options: Schema): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -20,31 +21,46 @@ export function addEslintPrettier(options: Schema): Rule {
 
     const prettierRule = ['error', prettierOptions]
     if (options.eslintFileFormat === ESLINT_FILE_FORMAT.PACKAGE_JSON) {
-      context.logger.info('Updated eslintConfig in package.json')
       updateEslintConfig(tree, buffer, configFileName, prettierRule)
     } else if (options.eslintFileFormat === ESLINT_FILE_FORMAT.JSON) {
-      context.logger.info(`Updated ${configFileName}`)
       updateEslintJson(tree, buffer, configFileName, prettierRule)
+    } else if (options.eslintFileFormat === ESLINT_FILE_FORMAT.JAVASCRIPT) {
+      updateEslintJs(tree, configFileName, prettierRule)
     }
 
+    context.logger.info(`Added eslint-plugin-prettier`)
     return tree
   }
 }
 
 function updateEslintConfig(tree: Tree, buffer: Buffer, configFileName: string, prettierRule: (string | PrettierOptions)[]) {
   const packageJson = JSON.parse(buffer.toString())
-  const eslintConfig = packageJson.eslintConfig || {}
-  const eslintExtends = eslintConfig.extends || []
-  const eslintRules = eslintConfig.rules || {}
-  eslintConfig.extends = [...eslintExtends, 'plugin:prettier/recommended']
-  eslintConfig.rules = { ...eslintRules, 'prettier/prettier': prettierRule }
-  packageJson.eslintConfig = eslintConfig
+  const { eslintConfig = {} } = packageJson.eslintConfig || {}
+  const { extends: eslintExtends = [], rules = {} } = eslintConfig
+  packageJson.eslintConfig = {
+    ...eslintConfig,
+    extends: uniq([...eslintExtends, 'plugin:prettier/recommended']),
+    rules: {
+      ...rules,
+      'prettier/prettier': prettierRule,
+    },
+  }
   tree.overwrite(configFileName, JSON.stringify(packageJson, null, 2))
 }
 
 function updateEslintJson(tree: Tree, buffer: Buffer, configFileName: string, prettierRule: (string | PrettierOptions)[]) {
   const eslintJson = JSON.parse(buffer.toString())
-  eslintJson.extends = [...eslintJson.extends, 'plugin:prettier/recommended']
-  eslintJson.rules = { ...eslintJson.rules, 'prettier/prettier': prettierRule }
+  eslintJson.extends = uniq([...eslintJson.extends, 'plugin:prettier/recommended'])
+  eslintJson.rules = {
+    ...eslintJson.rules,
+    'prettier/prettier': prettierRule,
+  }
   tree.overwrite(configFileName, JSON.stringify(eslintJson, null, 2))
 }
+
+// function updateEslintJs(tree: Tree, buffer: Buffer, configFileName: string, prettierRule: (string | PrettierOptions)[]) {
+//   const eslintJson = JSON.parse(buffer.toString())
+//   // eslintJson.extends = [...eslintJson.extends, 'plugin:prettier/recommended']
+//   // eslintJson.rules = { ...eslintJson.rules, 'prettier/prettier': prettierRule }
+//   // tree.overwrite(configFileName, JSON.stringify(eslintJson, null, 2))
+// }

@@ -1,5 +1,5 @@
 export enum ESLINT_FILE_FORMAT {
   JSON = 'json',
-  JAVASCRIPT = 'js',
+  JAVASCRIPT = 'javascript',
   PACKAGE_JSON = 'package.json',
 }
