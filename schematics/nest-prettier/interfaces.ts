@@ -4,4 +4,3 @@ export interface EslintOptions {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   rules?: Record<string, any>
 }
-

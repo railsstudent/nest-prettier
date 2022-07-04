@@ -6,7 +6,7 @@
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",
     "copy:collection": "cpx schematics/collection.json dist && cpx 'schematics/**/schema.json' dist",
-    "copy:schematics": "cpx 'schematics/**/files/**' dist/nest-prettier",
+    "copy:schematics": "cpx 'schematics/**/files/*' dist",
     "postbuild": "npm run copy:collection && npm run copy:schematics",
     "test": "npm run build && jasmine src/**/*_spec.js",
     "manual-test": "npm run build && schematics .:nest-add",
