@@ -1,0 +1,4 @@
+extends: ['plugin:prettier/recommended']
+rules: {
+    'prettier/prettier': ['error', {'singleQuote': <%= singleQuote %>, 'trailingComma': '<%= trailComma %>', 'tabWidth': <%= tabWidth %>, 'semi': <%= semi %>, 'printWidth': <%= printWidth %>, 'bracketSpacing': <%= bracketSpacing %>, 'useTabs': <%= useTabs %> }]
+}
