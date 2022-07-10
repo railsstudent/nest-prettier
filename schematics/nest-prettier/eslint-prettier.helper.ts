@@ -1,8 +1,10 @@
-import { apply, Rule, SchematicContext, strings, template, Tree, mergeWith, url } from '@angular-devkit/schematics'
-import { Schema } from './schema'
-import { ESLINT_FILE_FORMAT } from './enum'
-import { PrettierOptions } from './types'
+import { apply, Rule, SchematicContext, template, Tree, mergeWith, url } from '@angular-devkit/schematics'
+import { strings } from '@angular-devkit/core'
 import { uniq } from 'lodash'
+
+import { ESLINT_FILE_FORMAT } from './enum'
+import { Schema } from './schema'
+import { PrettierOptions } from './types'
 
 export function addEslintPrettier(options: Schema): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -26,6 +28,11 @@ export function addEslintPrettier(options: Schema): Rule {
       updateEslintJson(tree, buffer, configFileName, prettierRule)
     } else if (options.eslintFileFormat === ESLINT_FILE_FORMAT.JAVASCRIPT) {
       context.logger.info('Does not support .eslintrc.js')
+      const eslintTemplate = './eslintrc-prettier.template'
+      if (tree.exists(eslintTemplate)) {
+        tree.delete(eslintTemplate)
+      }
+
       const sourceTemplate = url('./files')
       const sourceParameterizedTemplate = apply(sourceTemplate, [
         template({
@@ -33,7 +40,7 @@ export function addEslintPrettier(options: Schema): Rule {
           ...strings,
         }),
       ])
-      context.logger.info(`Append plugin and rule from eslintrc-prettier.template to ${configFileName}. Then, delete the template file.`)
+      context.logger.info(`Append plugin and rule from ${eslintTemplate} to ${configFileName}. Then, delete the template file.`)
       return mergeWith(sourceParameterizedTemplate)(tree, context)
     }
 

@@ -10,7 +10,7 @@ import { Schema } from './schema'
 // per file.
 export function nestPrettier(options: Schema): Rule {
   return (tree: Tree, context: SchematicContext) => {
-    context.addTask(new NodePackageInstallTask({ allowScripts: true }))
+    context.addTask(new NodePackageInstallTask())
 
     addDependencies(tree, context, [prettier, eslintConfigPrettier, eslintPluginPrettier])
     return chain([addPrettierConfig(options), addEslintPrettier(options)])
