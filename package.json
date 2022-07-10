@@ -23,7 +23,7 @@
   "license": "MIT",
   "schematics": "./dist/collection.json",
   "nest-add": {
-    "save": false
+    "save": "devDependencies"
   },
   "dependencies": {
     "@angular-devkit/core": "^14.0.4",
