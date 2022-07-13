@@ -1,6 +1,6 @@
 {
   "name": "nest-prettier",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A schematic to run prettier as an eslint rule",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -17,10 +17,17 @@
     "schematics",
     "nestjs",
     "eslint-plugin-prettier",
+    "code formatting",
     "prettier"
   ],
   "author": "Connie Leung",
   "license": "MIT",
+  "bugs": "https://github.com/railsstudent/nest-prettier/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/railsstudent/nest-prettier.git"
+  },
+  "homepage": "https://github.com/railsstudent/nest-prettier#readme",
   "schematics": "./dist/collection.json",
   "nest-add": {
     "save": "devDependencies"
@@ -28,9 +35,7 @@
   "dependencies": {
     "@angular-devkit/core": "13.3.0",
     "@angular-devkit/schematics": "13.3.0",
-    "@schematics/angular": "13.3.0",
-    "lodash": "4.17.21",
-    "typescript": "4.7.2"
+    "@schematics/angular": "13.3.0"
   },
   "devDependencies": {
     "@types/jasmine": "~4.0.0",
@@ -43,7 +48,9 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "jasmine": "4.0.0",
+    "lodash": "4.17.21",
     "prettier": "2.7.1",
-    "rimraf": "3.0.2"
+    "rimraf": "3.0.2",
+    "typescript": "4.7.2"
   }
 }
