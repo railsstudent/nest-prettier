@@ -11,6 +11,10 @@ export function addPrettierConfig(options: Schema): Rule {
       printWidth: options.printWidth,
       bracketSpacing: options.bracketSpacing,
       useTabs: options.useTabs,
+      arrowParens: options.arrowParens,
+      quoteProps: options.quoteProps,
+      requirePragma: options.requirePragma,
+      insertPragma: options.insertPragma,
     }
 
     const configFileName = '.prettierrc'

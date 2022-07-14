@@ -1,4 +1,16 @@
 extends: ['plugin:prettier/recommended']
 rules: {
-    'prettier/prettier': ['error', {'singleQuote': <%= singleQuote %>, 'trailingComma': '<%= trailComma %>', 'tabWidth': <%= tabWidth %>, 'semi': <%= semi %>, 'printWidth': <%= printWidth %>, 'bracketSpacing': <%= bracketSpacing %>, 'useTabs': <%= useTabs %> }]
+    'prettier/prettier': ['error', {
+        'singleQuote': <%= singleQuote %>, 
+        'trailingComma': '<%= trailComma %>', 
+        'tabWidth': <%= tabWidth %>, 
+        'semi': <%= semi %>, 
+        'printWidth': <%= printWidth %>, 
+        'bracketSpacing': <%= bracketSpacing %>, 
+        'useTabs': <%= useTabs %>,
+        'arrowParens': '<%= arrowParens %>',
+        'quoteProps': '<%= quoteProps %>',
+        'requirePragma': <%= requirePragma %>,
+        'insertPragma': <%= insertPragma %>, 
+    }]
 }

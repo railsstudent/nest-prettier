@@ -44,6 +44,13 @@
       "x-prompt": "Use single quotes instead of double quotes.",
       "default": false
     },
+    "quoteProps": {
+      "type": "string",
+      "description": "Use single quotes instead of double quotes.",
+      "x-prompt": "Use single quotes instead of double quotes.",
+      "default": "as-needed",
+      "enum": ["as-needed", "consistent", "preserve"]
+    },
     "trailComma": {
       "type": "string",
       "description": "Print trailing commas wherever possible in multi-line comma-separated syntactic structures.",
@@ -56,6 +63,25 @@
       "description": "Print spaces between brackets in object literals.",
       "x-prompt": "Print spaces between brackets in object literals.",
       "default": true
+    },
+    "arrowParens": {
+      "type": "string",
+      "description": "Include parentheses around a sole arrow function parameter.",
+      "x-prompt": "Include parentheses around a sole arrow function parameter.",
+      "default": "always",
+      "enum": ["always", "avoid"]
+    },
+    "requirePragma": {
+      "type": "boolean",
+      "description": "Prettier can restrict itself to only format files that contain a special comment, called a pragma, at the top of the file. This is very useful when gradually transitioning large, unformatted codebases to prettier.",
+      "x-prompt": "Prettier can restrict itself to only format files that contain a special comment, called a pragma, at the top of the file. This is very useful when gradually transitioning large, unformatted codebases to prettier.",
+      "default": false
+    },
+    "insertPragma": {
+      "type": "boolean",
+      "description": "Prettier can insert a special @format marker at the top of files specifying that the file has been formatted with prettier. This works well when used in tandem with the --require-pragma option.",
+      "x-prompt": "Prettier can insert a special @format marker at the top of files specifying that the file has been formatted with prettier. This works well when used in tandem with the --require-pragma option.",
+      "default": false
     }
   }
 }

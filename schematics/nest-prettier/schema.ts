@@ -7,4 +7,8 @@ export interface Schema {
   trailComma: string
   bracketSpacing: boolean
   eslintFileFormat: string
+  quoteProps: string
+  arrowParens: string
+  requirePragma: boolean
+  insertPragma: boolean
 }
