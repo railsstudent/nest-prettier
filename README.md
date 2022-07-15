@@ -85,7 +85,6 @@ rules: {
 
 Copy ```plugin:prettier/recommended``` and 
 
-
 ```javascript
 'prettier/prettier': ['error', {
         'singleQuote': true, 
