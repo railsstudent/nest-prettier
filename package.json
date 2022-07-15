@@ -1,6 +1,6 @@
 {
   "name": "nest-prettier",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A schematic to run prettier as an eslint rule",
   "scripts": {
     "prebuild": "rimraf dist",

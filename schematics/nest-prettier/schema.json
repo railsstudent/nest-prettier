@@ -46,8 +46,8 @@
     },
     "quoteProps": {
       "type": "string",
-      "description": "Use single quotes instead of double quotes.",
-      "x-prompt": "Use single quotes instead of double quotes.",
+      "description": "Change when properties in objects are quoted.",
+      "x-prompt": "Change when properties in objects are quoted.",
       "default": "as-needed",
       "enum": ["as-needed", "consistent", "preserve"]
     },
