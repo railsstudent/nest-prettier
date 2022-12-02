@@ -1,5 +1,5 @@
-import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics'
-import { Schema } from './schema'
+import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { Schema } from './schema';
 
 export function addPrettierConfig(options: Schema): Rule {
   return (tree: Tree, context: SchematicContext) => {
@@ -15,16 +15,16 @@ export function addPrettierConfig(options: Schema): Rule {
       quoteProps: options.quoteProps,
       requirePragma: options.requirePragma,
       insertPragma: options.insertPragma,
-    }
+    };
 
-    const configFileName = '.prettierrc'
+    const configFileName = '.prettierrc';
     if (tree.exists(configFileName)) {
-      tree.overwrite(configFileName, JSON.stringify(prettierOptions, null, 2))
-      context.logger.info(`${configFileName} is overwritten`)
+      tree.overwrite(configFileName, JSON.stringify(prettierOptions, null, 2));
+      context.logger.info(`${configFileName} is overwritten`);
     } else {
-      tree.create(configFileName, JSON.stringify(prettierOptions, null, 2))
-      context.logger.info(`Created ${configFileName}`)
+      tree.create(configFileName, JSON.stringify(prettierOptions, null, 2));
+      context.logger.info(`Created ${configFileName}`);
     }
-    return tree
-  }
+    return tree;
+  };
 }

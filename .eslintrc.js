@@ -16,7 +16,7 @@ module.exports = {
   rules: {
     'prettier/prettier': [
       'error',
-      { singleQuote: true, trailingComma: 'all', tabWidth: 2, semi: false, printWidth: 140, bracketSpacing: true },
+      { singleQuote: true, trailingComma: 'all', tabWidth: 2, semi: true, printWidth: 120, bracketSpacing: true },
     ],
   },
 }

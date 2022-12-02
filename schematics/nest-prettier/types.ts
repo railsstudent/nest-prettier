@@ -1,3 +1,3 @@
-import { Schema } from './schema'
+import { Schema } from './schema';
 
-export type PrettierOptions = Omit<Schema, 'eslintFileFormat'>
+export type PrettierOptions = Omit<Schema, 'eslintFileFormat'>;

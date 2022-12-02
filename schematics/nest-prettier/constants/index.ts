@@ -1,1 +1,1 @@
-export * from './dependency.constant'
+export * from './dependency.constant';
