@@ -3,7 +3,7 @@ import { NodeDependency, NodeDependencyType } from '@schematics/angular/utility/
 export const prettier: NodeDependency = {
   name: 'prettier',
   type: NodeDependencyType.Dev,
-  version: '2.7.1',
+  version: '2.8.0',
 }
 
 export const eslintConfigPrettier: NodeDependency = {
